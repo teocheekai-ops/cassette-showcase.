@@ -34,13 +34,13 @@ jobs:
         run: unzip -q CassetteShowcase-AndroidStudio.zip
 
       - name: Build debug APK
-        working-directory: CassetteShowcase/CassetteShowcase
+        working-directory: CassetteShowcase
         run: gradle --no-daemon assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: CassetteShowcase-debug-apk
-          path: CassetteShowcase/CassetteShowcase/app/build/outputs/apk/debug/app-debug.apk
+          path: CassetteShowcase/app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
           retention-days: 14
